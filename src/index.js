@@ -9,7 +9,7 @@ import {
   applyMiddleware
 } from 'redux';
 import thunk from 'redux-thunk';
-import fetchTasksReducer from './reducers/fetchTasks';
+import fetchTasksReducer from './reducers/tasks';
 import './index.css';
 import App from './App';
 

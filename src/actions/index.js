@@ -1,3 +1,3 @@
-import { fetchTasks } from './fetchTasks';
+import { fetchTasks, fetchTasksFailure, fetchTasksRequest, fetchTasksSuccess } from './fetchTasks';
 
-export { fetchTasks }; 
+export { fetchTasks, fetchTasksFailure, fetchTasksRequest, fetchTasksSuccess }; 
