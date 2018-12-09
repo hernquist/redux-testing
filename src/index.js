@@ -9,12 +9,12 @@ import {
   applyMiddleware
 } from 'redux';
 import thunk from 'redux-thunk';
-import tasksReducer from './store/reducer';
+import fetchTasksReducer from './reducers/fetchTasks';
 import './index.css';
 import App from './App';
 
 const rootReducer = combineReducers({
-  tasks: tasksReducer,
+  tasks: fetchTasksReducer
 });
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
