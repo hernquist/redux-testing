@@ -20,7 +20,8 @@ const reducer = (state = initialState, action) => {
     case FETCH_TASKS_REQUEST:
       return { ...state,
         error: null,
-        loading: true
+        loading: true,
+        data: []
       }
     case FETCH_TASKS_SUCCESS:
       return { ...state,
