@@ -5,20 +5,21 @@ import {
 } from 'react-redux';
 import {
   createStore,
-  combineReducers
+  combineReducers,
+  applyMiddleware
 } from 'redux';
-
-import tasksReducer from './store/reducers/counter';
-
+import thunk from 'redux-thunk';
+import tasksReducer from './store/reducer';
 import './index.css';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
 
 const rootReducer = combineReducers({
   tasks: tasksReducer,
 });
 
-const store = createStore(
+const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+
+const store = createStoreWithMiddleware(
   rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
@@ -26,7 +27,4 @@ const store = createStore(
 ReactDOM.render( 
   <Provider store = {store} >
     <App />
-  </Provider>, 
-  document.getElementById('root'));
-
-registerServiceWorker();
+  </Provider>, document.getElementById('root'));

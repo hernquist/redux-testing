@@ -2,9 +2,9 @@ import {
   FETCH_TASKS_FAILURE,
   FETCH_TASKS_REQUEST,
   FETCH_TASKS_SUCCESS
-} from './constants';
+} from '../store/constants';
 import {
-  fetchTasks as getTasks
+  getTasks
 } from "../services/tasks";
 
 export const fetchTasksRequest = () => ({
@@ -25,9 +25,9 @@ export const fetchTasks = () => {
   return dispatch => {
     dispatch(fetchTasksRequest());
 
-    return getTasks()
+    return getTasks
       .then(resp => {
-        dispatch(fetchTasksSuccess(resp.data.data.tacoTasks))
+        dispatch(fetchTasksSuccess(resp.data))
       })
       .catch(err => {
         dispatch(fetchTasksFailure(err))
