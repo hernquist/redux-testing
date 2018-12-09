@@ -2,7 +2,11 @@ import React, {
   Component
 } from 'react'
 
-export default class containers extends Component {
+
+export default class Tasks extends Component {
+  componentDidMount() {
+    this.props.fetchTasks();
+  }
   render() {
     return ( <
       div >
