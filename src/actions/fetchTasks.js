@@ -2,7 +2,7 @@ import {
   FETCH_TASKS_FAILURE,
   FETCH_TASKS_REQUEST,
   FETCH_TASKS_SUCCESS
-} from '../store/constants';
+} from '../constants/constants';
 import {
   getTasks
 } from "../services/tasks";

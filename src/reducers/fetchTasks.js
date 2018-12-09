@@ -2,7 +2,7 @@ import {
   FETCH_TASKS_REQUEST,
   FETCH_TASKS_SUCCESS,
   FETCH_TASKS_FAILURE
-} from "../store/constants";
+} from "../constants/constants";
 
 const initialState = {
   data: [],
