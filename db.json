@@ -1,0 +1,12 @@
+{
+  "tasks": [
+    { "id": 1, "title": "packdown", "author": "Darrol McDearmen", "status": "COMPLETE" },
+    { "id": 2, "title": "cleanup packdown", "author": "Darrol McDearmen", "status": "INCOMPLETE" },
+    { "id": 3, "title": "check inventory", "author": "Janice Jordan", "status": "COMPLETE" },
+    { "id": 4, "title": "safety check", "author": "Darrol McDearmen", "status": "INCOMPLETE" },
+    { "id": 5, "title": "packdown", "author": "Darrol McDearmen", "status": "COMPLETE" },
+    { "id": 6, "title": "safety training", "author": "Janice Jordan", "status": "DELETED" },
+    { "id": 7, "title": "onboarding", "author": "Sheryl McDearmen", "status": "COMPLETE" },
+    { "id": 8, "title": "weeking status meeting", "author": "Darrol McDearmen", "status": "INCOMPLETE" }
+  ]
+}

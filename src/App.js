@@ -1,8 +1,28 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {fetchTasks} from "./services/tasks";
+import axios from "axios";
+
 
 class App extends Component {
+  componentDidMount() {
+    // axios.get('http://localhost:3000/tasks')
+    //   .then(function (response) {
+    //     console.log(response);
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error);
+    //   });
+    fetchTasks.then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
+  }
+
   render() {
     return (
       <div className="App">
