@@ -7,19 +7,16 @@ import {
 const initialState = {
   data: [],
   loading: false,
-  error: null
+  error: {}
 };
 
 const reducer = (state = initialState, action) => {
-  const {
-    type,
-    tasks,
-    err
-  } = action;
+  const { type, tasks, err } = action;
+
   switch (type) {
     case FETCH_TASKS_REQUEST:
       return { ...state,
-        error: null,
+        error: {},
         loading: true,
         data: []
       }

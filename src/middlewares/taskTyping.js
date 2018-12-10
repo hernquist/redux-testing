@@ -3,9 +3,8 @@ import taskSchema from "middlewares/taskSchema"
 
 export default ({_, getState}) => next => action => {
   next(action);
+  const { tasks } = getState();
+  const validate = tv4.validate(tasks, taskSchema);
 
-  console.log(taskSchema)
-  const state = getState();
-
-  console.warn(tv4.validate(state.tasks, taskSchema))
+  if (!validate) console.warn(tv4.validateResult(tasks, taskSchema));
 }

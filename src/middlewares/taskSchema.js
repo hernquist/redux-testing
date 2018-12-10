@@ -21,12 +21,8 @@ export default {
     },
     "error": {
       "$id": "#/properties/error",
-      "type": "null",
-      "title": "The Error Schema",
-      "default": null,
-      "examples": [
-        null
-      ]
+      "type": "object",
+      "title": "The Error Schema"
     },
     "data": {
       "$id": "#/properties/data",
