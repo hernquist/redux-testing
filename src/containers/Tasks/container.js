@@ -2,9 +2,15 @@ import { connect } from "react-redux";
 import Tasks from "./components/DisplayTasks";
 import { fetchTasks } from "actions";
 
-const mapDispatchToProps = dispatch => ({
-  fetchTasks: () => dispatch(fetchTasks())
-})
+// OLD WAY
+// const mapDispatchToProps = dispatch => ({
+//   fetchTasks: () => dispatch(fetchTasks())
+// })
+
+// NEW WAY
+const mapDispatchToProps = {
+  fetchTasks
+}
 
 const mapStateToProps = state => ({
   tasks: state.tasks.data,
