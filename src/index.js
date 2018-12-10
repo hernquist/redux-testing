@@ -9,7 +9,8 @@ import {
   applyMiddleware
 } from 'redux';
 import thunk from 'redux-thunk';
-import fetchTasksReducer from './reducers/tasks';
+import taskTyping from "middlewares/taskTyping";
+import fetchTasksReducer from 'reducers/tasks';
 import './index.css';
 import App from './App';
 
@@ -17,7 +18,7 @@ const rootReducer = combineReducers({
   tasks: fetchTasksReducer
 });
 
-const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+const createStoreWithMiddleware = applyMiddleware(thunk, taskTyping)(createStore);
 
 const store = createStoreWithMiddleware(
   rootReducer,
