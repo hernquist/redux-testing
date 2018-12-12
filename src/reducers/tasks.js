@@ -16,7 +16,7 @@ const reducer = (state = initialState, action) => {
   switch (type) {
     case FETCH_TASKS_REQUEST:
       return { ...state,
-        error: {},
+        error: null,
         loading: true,
         data: []
       }

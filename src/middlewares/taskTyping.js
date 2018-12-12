@@ -1,7 +1,7 @@
 import tv4 from "tv4";
 import taskSchema from "middlewares/taskSchema"
 
-export default ({_, getState}) => next => action => {
+export default ({dispatch, getState}) => next => action => {
   next(action);
   const { tasks } = getState();
   const validate = tv4.validate(tasks, taskSchema);
