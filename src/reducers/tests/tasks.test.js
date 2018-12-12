@@ -3,7 +3,7 @@ import {
     FETCH_TASKS_FAILURE,
     FETCH_TASKS_SUCCESS,
     FETCH_TASKS_REQUEST,
-  } from 'constants';
+  } from '../../constants';
 
 const tasks = [
   { "id": 1, "title": "packdown", "author": "Darrol McDearmen", "status": "COMPLETE" },
