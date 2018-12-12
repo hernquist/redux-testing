@@ -58,6 +58,28 @@ describe('src/actions/fetchTasks', () => {
 
     describe('fetchTasks', () => {
       it('creates FETCH_TASKS_REQUEST and SUCCESS with a tasks payload after a successful API call', () => {
+        moxios.wait(() => {
+          const request = moxios.requests.mostRecent();
+          const response = { data: testTasks };
+
+          request.respondWith({
+            status: 200,
+            response
+          });
+        });
+
+        const expectedActions = [
+          { type: FETCH_TASKS_REQUEST },
+          { type: FETCH_TASKS_SUCCESS, tasks: testTasks }
+        ];
+
+        const store = mockStore();
+
+        return store.dispatch(fetchTasks()).then(() => {
+          expect(store.getActions()).toEqual(expectedActions);
+        });
+
+
       })
 
       it('creates FETCH_TASKS_REQUEST and FAILURE with an err payload after a failed API call', () => {
