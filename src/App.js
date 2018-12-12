@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return ( 
       <div className = "App" >
-        <Tasks />
+        <Tasks number={2}/>
       </div>
     );
   }
