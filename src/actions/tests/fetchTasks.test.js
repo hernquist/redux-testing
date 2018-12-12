@@ -1,3 +1,7 @@
+import moxios from "moxios"
+import configureMockStore from "redux-mock-store";
+import thunk from "redux-thunk";
+
 import { 
   FETCH_TASKS_SUCCESS, 
   FETCH_TASKS_FAILURE, 
@@ -10,9 +14,8 @@ import {
   fetchTasks,
 } from 'actions';
 
-import moxios from "moxios"
-import configureMockStore from "redux-mock-store";
-import thunk from "redux-thunk";
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
 
 const testTasks = [
   { "id": 1, "title": "packdown", "author": "Darrol McDearmen", "status": "COMPLETE" },
