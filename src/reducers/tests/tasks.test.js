@@ -1,9 +1,9 @@
 import reducer, { initialState } from 'reducers/tasks';
 import {
-    FETCH_TASKS_FAILURE,
-    FETCH_TASKS_SUCCESS,
-    FETCH_TASKS_REQUEST,
-  } from 'constants';
+  FETCH_TASKS_FAILURE,
+  FETCH_TASKS_SUCCESS,
+  FETCH_TASKS_REQUEST,
+} from '../../constants';
 
 const tasks = [
   { "id": 1, "title": "packdown", "author": "Darrol McDearmen", "status": "COMPLETE" },
@@ -22,9 +22,18 @@ describe('src/reducers/tasks', () => {
   describe('FETCH_TASKS_REQUEST', () => {
 
     it('returns state with a loading set to true and error set to null', () => {
+      const action = { type: FETCH_TASKS_REQUEST }
+      const state = reducer(initialState, action);
+      expect(state.loading).toBe(true);
+      expect(state.error).toBe(null)
     })
     
     it('resets data to an empty array', () => {
+      const action = {
+        type: FETCH_TASKS_SUCCESS, 
+        tasks
+      }
+      const state = reducer(initialState, action)
     })
   })
   

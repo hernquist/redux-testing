@@ -4,7 +4,7 @@ import {
   FETCH_TASKS_FAILURE
 } from "../constants";
 
-const initialState = {
+export const initialState = {
   data: [],
   loading: false,
   error: null
@@ -16,6 +16,7 @@ const reducer = (state = initialState, action) => {
     tasks,
     err
   } = action;
+
   switch (type) {
     case FETCH_TASKS_REQUEST:
       return { ...state,
